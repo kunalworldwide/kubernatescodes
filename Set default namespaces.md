@@ -2,7 +2,8 @@ You can divide a Kubernetes cluster into multiple environments by using namespac
 
 With this trick, you can set the namespace preference before running kubectl commands. Run the following command before executing the kubectl commands, and it will save the namespace for all subsequent kubectl commands for your current context:
 
-kubectl config set-context $(kubectl config current-context) --namespace=mynamespace
+****kubectl config set-context $(kubectl config current-context) --namespace=mynamespace****
+
 Some of the most common and useful commands with namespace are listed below:
 
 kubectl get namespaces
@@ -11,3 +12,5 @@ kubectl get pods --all-namespaces (List all pods with status from all namespaces
 kubectl get po -o wide -n <namspace1> -n <namespace2> -n <namespace3> (This command will identify the pods in each namespace)
 kubectl describe namespace <namespace>
 kubectl config view --minify | grep namespace (This command will ensure that you set the namespace correctly for your current context.) 
+  
+
